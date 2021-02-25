@@ -44,7 +44,7 @@ public class TelefoneDAO {
 		return entityManager.find(Telefone.class, id);
 	}
 	
-	// Sobrecarga do m�todo, pois no ContaServlet recebo um par�metro String
+	// Sobrecarga do método, pois no ContaServlet recebo um parâmetro String
 	public Telefone getById(final String id) {
 		return getById(Integer.parseInt(id));
 	}
@@ -52,6 +52,13 @@ public class TelefoneDAO {
 	@SuppressWarnings("unchecked")
 	public List<Telefone> getAll() {
 		return entityManager.createQuery("FROM " + Telefone.class.getName()).getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Telefone> getTelefonesUsuario(final int usuario_id) {
+		return entityManager.createQuery("FROM " + Telefone.class.getName() + " WHERE usuario_id = :usuario_id")
+				.setParameter("usuario_id", usuario_id)
+				.getResultList();		
 	}
 
 	public void persist(Telefone telefone) {

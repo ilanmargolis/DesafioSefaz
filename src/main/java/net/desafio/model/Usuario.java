@@ -19,6 +19,7 @@ public class Usuario {
 	private String nome;
 	private String email;
 	private String senha;
+	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 	private List<Telefone> telefones;
 
@@ -26,13 +27,20 @@ public class Usuario {
 	public Usuario() {
 	}
 
-	public Usuario(int id, String nome, String email, String senha, List<Telefone> telefones) {
+	public Usuario(String nome, String email, String senha) {
+		super();
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+	}
+
+	public Usuario(int id, String nome, String email, String senha, List<Telefone> telefoneList) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
-		this.telefones = telefones;
+		this.telefones = telefoneList;
 	}
 
 	// Métodos get e set

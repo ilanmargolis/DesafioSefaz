@@ -1,0 +1,74 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: rgb(251, 255, 176);
+	background-image: url("../images/bg_qualiti.png")
+}
+
+tr.thead-light {
+	background-color: white;
+}
+
+.logomarca {
+	height: 180px;
+	background-color: cyan;
+	background-image: url("../imagens/logomarca.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.menu, .tipoTela, .contaCliente {
+	font-size: 30px;
+	font-weight: bold;
+	background-color: white;
+	margin-bottom: -5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.contaCliente {
+	color: red;
+	margin-bottom: 0;
+}
+
+.login {
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: white;
+	padding: 20px;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.rodape {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: graytext;
+	color: white;
+	text-align: center;
+}
+
+.icone_p {
+	width: 20px;
+	height: 20px;
+}
+
+.icone_m {
+	width: 24px;
+	height: 24px;
+}
+
+.icone_g {
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
