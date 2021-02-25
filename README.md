@@ -1,4 +1,4 @@
-![Qualiti Bank Corporation](https://github.com/ilanmargolis/QualitiBank/blob/master/WebContent/images/logomarca.png)
+![Desafio SEFAZ](https://github.com/ilanmargolis/DesafioSefaz/blob/master/WebContent/imagens/logomarca.png)
 
 
 # Projeto desafio do minicurso SEFAZ 2021 
