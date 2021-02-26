@@ -68,7 +68,7 @@ public class UsuarioDAO {
 
 		int qtd = usuarioList.size();
 
-		// Caso não tenha nenhum usuário, resetar o auto incremento (Ainda sem funcionar)
+		// Caso não tenha nenhum usuário, resetar o auto incremento
 		if (qtd == 0) {
 			try {
 				entityManager.getTransaction().begin();

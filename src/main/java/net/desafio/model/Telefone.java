@@ -25,6 +25,14 @@ public class Telefone {
 	public Telefone() {
 	}
 
+	public Telefone(int ddd, String numero, String tipo, Usuario usuario) {
+		super();
+		this.ddd = ddd;
+		this.numero = numero;
+		this.tipo = tipo;
+		this.usuario = usuario;
+	}
+
 	public Telefone(int id, int ddd, String numero, String tipo, Usuario usuario) {
 		super();
 		this.id = id;
@@ -73,11 +81,5 @@ public class Telefone {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
-
-	@Override
-	public String toString() {
-		return "Telefone [id=" + id + ", ddd=" + ddd + ", numero=" + numero + ", tipo=" + tipo + ", usuario=" + usuario
-				+ "]";
 	}
 }

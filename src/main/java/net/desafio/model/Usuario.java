@@ -21,7 +21,7 @@ public class Usuario {
 	private String senha;
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-	private List<Telefone> telefones;
+	private List<Telefone> telefoneList;
 
 	// Construtores
 	public Usuario() {
@@ -40,7 +40,7 @@ public class Usuario {
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
-		this.telefones = telefoneList;
+		this.telefoneList = telefoneList;
 	}
 
 	// Métodos get e set
@@ -76,8 +76,11 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	@Override
-	public String toString() {
-		return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + "]";
+	public List<Telefone> getTelefones() {
+		return telefoneList;
+	}
+
+	public void setTelefones(List<Telefone> telefoneList) {
+		this.telefoneList = telefoneList;
 	}
 }

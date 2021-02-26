@@ -8,6 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import net.desafio.model.Telefone;
+import net.desafio.model.Usuario;
 
 @Stateless
 public class TelefoneDAO {
@@ -44,7 +45,6 @@ public class TelefoneDAO {
 		return entityManager.find(Telefone.class, id);
 	}
 	
-	// Sobrecarga do método, pois no ContaServlet recebo um parâmetro String
 	public Telefone getById(final String id) {
 		return getById(Integer.parseInt(id));
 	}
@@ -61,6 +61,27 @@ public class TelefoneDAO {
 				.getResultList();		
 	}
 
+	public int qtdTelefone() {
+		List<Telefone> telefoneList = TelefoneDAO.getInstance().getAll();
+
+		int qtd = telefoneList.size();
+
+		// Caso não tenha nenhum telefone, resetar o auto incremento
+		if (qtd == 0) {
+			try {
+				entityManager.getTransaction().begin();
+				entityManager.createNativeQuery("ALTER TABLE telefone AUTO_INCREMENT=1")
+						.executeUpdate();
+				entityManager.getTransaction().commit();
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				entityManager.getTransaction().rollback();
+			}
+		}
+
+		return qtd;
+	}
+	
 	public void persist(Telefone telefone) {
 		try {
 			entityManager.getTransaction().begin();
@@ -89,9 +110,17 @@ public class TelefoneDAO {
 			telefone = entityManager.find(Telefone.class, telefone.getId());
 			entityManager.remove(telefone);
 			entityManager.getTransaction().commit();
+			
+			qtdTelefone();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			entityManager.getTransaction().rollback();
 		}
 	}
+	
+	public void removeById(final int id) {
+		Telefone telefone = getById(id);
+
+		remove(telefone);
+	}	
 }

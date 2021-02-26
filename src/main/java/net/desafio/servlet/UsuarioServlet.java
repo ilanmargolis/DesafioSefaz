@@ -95,8 +95,8 @@ public class UsuarioServlet extends HttpServlet {
 	protected void doGet_deletar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		int id = Integer.parseInt(request.getParameter("usuario_id"));
-		UsuarioDAO.getInstance().removeById(id);
+		int usuario_id = Integer.parseInt(request.getParameter("usuario_id"));
+		UsuarioDAO.getInstance().removeById(usuario_id);
 
 		// caso não exista nenhum usuário, abre a tela de cadastramento 
 		if (UsuarioDAO.getInstance().qtdUsuario() == 0) {

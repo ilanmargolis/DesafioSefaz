@@ -16,7 +16,7 @@
 			<h2 class="menu">
 				<a href="${pageContext.request.contextPath}/usuario?acao=listagem"><img
 					class="icone_g"
-					src="${pageContext.request.contextPath}/imagens/listar.png">Listagem
+					src="${pageContext.request.contextPath}/imagens/listar-usuarios.png">Listagem
 					de usuários</a>
 			</h2>
 
@@ -40,51 +40,55 @@
 					action="${pageContext.request.contextPath}/usuario?acao=inserir"
 					method="post">
 			</c:if>
-			<div class="form-row align-items-center mt-4">
+			<div class="align-items-center mt-4">
 				<c:if test="${usuario != null}">
 					<input type="hidden" name="usuario_id"
 						value="<c:out value='${usuario.id}' />" />
 					<input type="hidden" name="senha"
 						value="<c:out value='${usuario.senha}' />" />
 				</c:if>
-
-				<div class="col-9 input-group mb-2">
-					<div class="input-group-prepend">
-						<span class="input-group-text" id="nomeUsuario">Nome do
-							usuário</span>
+				
+				<div class="form-row">
+					<div class="col-9 input-group mb-2">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="nomeUsuario">Nome do
+								usuário</span>
+						</div>
+						<input type="text" class="form-control"
+							value="<c:out value='${usuario.nome}' />"
+							placeholder="Digite o nome do usuário" name="nome"
+							aria-label="Usuário" aria-describedby="nomeUsuario"
+							<c:if test="${usuario == null}">autofocus</c:if>>
 					</div>
-					<input type="text" class="form-control"
-						value="<c:out value='${usuario.nome}' />"
-						placeholder="Digite o nome do usuário" name="nome"
-						aria-label="Usuário" aria-describedby="nomeUsuario"
-						<c:if test="${usuario == null}">autofocus</c:if>>
 				</div>
 
-				<div class="col-9 input-group mb-2">
-
-					<div class="input-group-prepend">
-						<span class="input-group-text" id="emailUsuario">E-mail</span>
-					</div>
-					<input type="email" class="form-control"
-						value="<c:out value='${usuario.email}' />"
-						placeholder="Digite o e-mail do usuário" name="email"
-						id="emailUsuario" aria-label="Usuário"
-						aria-describedby="emailUsuario">
-				</div>
-
-				<c:if test="${usuario == null}">
-					<div class="col-4 input-group">
+				<div class="form-row">
+					<div class="col-6 input-group mb-2">
 
 						<div class="input-group-prepend">
-							<span class="input-group-text" id="senhaUsuario">Senha</span>
+							<span class="input-group-text" id="emailUsuario">E-mail</span>
 						</div>
-						<input type="password" class="form-control"
-							value="<c:out value='${usuario.senha}' />"
-							placeholder="Digite a senha do usuário" name="senha"
-							id="senhaUsuario" aria-label="Senha"
-							aria-describedby="senhaUsuario" maxlength="15">
+						<input type="email" class="form-control"
+							value="<c:out value='${usuario.email}' />"
+							placeholder="Digite o e-mail do usuário" name="email"
+							id="emailUsuario" aria-label="Usuário"
+							aria-describedby="emailUsuario">
 					</div>
-				</c:if>
+
+					<c:if test="${usuario == null}">
+						<div class="col-4 input-group mb-2">
+
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="senhaUsuario">Senha</span>
+							</div>
+							<input type="password" class="form-control"
+								value="<c:out value='${usuario.senha}' />"
+								placeholder="Digite a senha do usuário" name="senha"
+								id="senhaUsuario" aria-label="Senha"
+								aria-describedby="senhaUsuario" maxlength="15">
+						</div>
+					</c:if>
+				</div>
 			</div>
 			<div class="col mt-2">
 				<button type="submit" class="btn btn-primary" value="Salvar">Enviar</button>

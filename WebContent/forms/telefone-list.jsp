@@ -15,36 +15,41 @@
 		<div class="cabecalho" align="center">
 			<div class="logomarca"></div>
 			<h2 class="menu">
-				<a href="${pageContext.request.contextPath}/usuario?acao=novo"><img
+				<a href="${pageContext.request.contextPath}/telefone?acao=novo&usuario_id=<c:out value='${usuario.id}'/>"><img
 					class="icone_g"
-					src="${pageContext.request.contextPath}/imagens/inserir-usuario.png">Novo
-					usuário</a>
+					src="${pageContext.request.contextPath}/imagens/inserir-telefone.png">Novo
+					telefone</a>
+				<a href="${pageContext.request.contextPath}/usuario?acao=listagem"><img
+					class="icone_g"
+					src="${pageContext.request.contextPath}/imagens/listar-usuarios.png">Listagem
+					de usuários</a>
 			</h2>
+			<div class="contaCliente">Telefones de ${usuario.nome}</div>
 		</div>
 
+		
 		<div class="conteudo">
 			<table class="table table-bordered">
 				<tr class="thead-dark">
 					<th scope="col">ID</th>
-					<th scope="col">Nome</th>
-					<th scope="col">Email</th>
+					<th scope="col">DDD</th>
+					<th scope="col">Número</th>
+					<th scope="col">Tipo</th>
 					<th scope="col">Ações</th>
 				</tr>
-				<c:forEach var="usuario" items="${usuarios}">
+		
+				<c:forEach var="telefone" items="${telefoneList}">
 					<tr class="thead-light">
-						<td scope="row"><c:out value="${usuario.id}" /></td>
-						<td><c:out value="${usuario.nome}" /></td>
-						<td><c:out value="${usuario.email}" /></td>
+						<td scope="row"><c:out value="${telefone.id}" /></td>
+						<td><c:out value="${telefone.ddd}" /></td>
+						<td><c:out value="${telefone.numero}" /></td>
+						<td><c:out value="${telefone.tipo}" /></td>
 						<td><a
-							href="${pageContext.request.contextPath}/telefone?acao=listagem&usuario_id=<c:out value='${usuario.id}'/>"><img
-								class="icone_m"
-								src="${pageContext.request.contextPath}/imagens/fone.png"></a>
-							&nbsp;&nbsp;&nbsp;&nbsp; <a
-							href="${pageContext.request.contextPath}/usuario?acao=editar&usuario_id=<c:out value='${usuario.id}'/>"><img
+							href="${pageContext.request.contextPath}/telefone?acao=editar&telefone_id=<c:out value='${telefone.id}'/>"><img
 								class="icone_p"
 								src="${pageContext.request.contextPath}/imagens/editar.png"></a>
 							&nbsp;&nbsp;&nbsp;&nbsp; <a
-							href="${pageContext.request.contextPath}/usuario?acao=deletar&usuario_id=<c:out value='${usuario.id}'/>"><img
+							href="${pageContext.request.contextPath}/telefone?acao=deletar&telefone_id=<c:out value='${telefone.id}'/>"><img
 								class="icone_p"
 								src="${pageContext.request.contextPath}/imagens/deletar.png"
 								alt="Deletar"></a></td>
