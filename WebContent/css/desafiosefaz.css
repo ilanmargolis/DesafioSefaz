@@ -2,7 +2,7 @@
 
 body {
 	background-color: rgb(251, 255, 176);
-	background-image: url("../images/bg_qualiti.png")
+	background-image: url("../imagens/bg_desafio.png")
 }
 
 tr.thead-light {
@@ -17,7 +17,7 @@ tr.thead-light {
 	background-position: center;
 }
 
-.menu, .tipoTela, .contaCliente {
+.menu, .tipoTela, .textoDestaque {
 	font-size: 30px;
 	font-weight: bold;
 	background-color: white;
@@ -26,7 +26,7 @@ tr.thead-light {
 	padding-bottom: 2px;
 }
 
-.contaCliente {
+.textoDestaque {
 	color: red;
 	margin-bottom: 0;
 }
@@ -38,12 +38,14 @@ tr.thead-light {
 	padding: 20px;
 	width: 300px;
 	height: 300px;
-	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
+	margin-top: 20px;
+/* 	position: absolute; caixa de login suspensa
+ */
 }
 
 .rodape {

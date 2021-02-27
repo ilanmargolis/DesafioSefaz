@@ -29,7 +29,7 @@
             		Novo telefone
             	</c:if>
 				<c:if test="${telefone != null}">
-            			Editar cadastro
+            		Editar cadastro
             	</c:if>
 			</h2>
 		</div>
@@ -67,19 +67,22 @@
 							value="<c:out value='${telefone.ddd}' />"
 							placeholder="Código DDD" name="ddd" id="dddTelefone"
 							aria-label="DDD" aria-describedby="dddTelefone" maxlength="2"
-							<c:if test="${telefone == null}">autofocus</c:if>>
+							onfocus="var temp_value=this.value; this.value=''; this.value=temp_value"
+							required autofocus>
+
 					</div>
 
-					<div class="col-3 input-group mb-2">
+					<div class="col-4 input-group mb-2">
 
 						<div class="input-group-prepend">
 							<span class="input-group-text" id="numeroTelefone">Número</span>
 						</div>
-						<input type="tel" class="form-control"
+						<input type="text" class="form-control"
 							value="<c:out value='${telefone.numero}' />"
-							placeholder="Número do telefone" name="numero"
+							onfocus="limpaFone(this)" onblur="mascaraFone(this)"
+							placeholder="9999-9999 ou 9.9999-9999" name="numero"
 							id="numeroTelefone" aria-label="Número"
-							aria-describedby="numeroTelefone" maxlength="10">
+							aria-describedby="numeroTelefone" maxlength="11" required>
 					</div>
 
 					<div class="col-3 input-group mb-2">
@@ -91,7 +94,7 @@
 							value="<c:out value='${telefone.tipo}' />"
 							placeholder="Informe o tipo do telefone" name="tipo"
 							id="tipoTelefone" aria-label="Tipo"
-							aria-describedby="tipoTelefone" maxlength="30">
+							aria-describedby="tipoTelefone" maxlength="30" required>
 					</div>
 				</div>
 			</div>
@@ -101,10 +104,41 @@
 		</div>
 		</form>
 	</div>
+
 	<div class="rodape">
 		<p>&copy2021 Desafio SEFAZ - Desenvolvido por Ilan Margolis</p>
 	</div>
-	</div>
+
+	<script>
+		function limpaFone(telefone) {
+			const foneAtual = telefone.value;
+			const foneAjustado = foneAtual.replace(/\-/g, ''); // usando expressão regular
+
+			telefone.value = foneAjustado;
+		}
+
+		function mascaraFone(telefone) {
+			const foneAtual = telefone.value;
+			const isCelular = foneAtual.length === 9;
+
+			let foneAjustado;
+
+			if (isCelular) {
+				const parte1 = textoAtual.slice(0, 1);
+				const parte2 = textoAtual.slice(1, 5);
+				const parte2 = textoAtual.slice(5, 9);
+
+				foneAjustado = parte1 + '.' + parte2 + '-' + parte3
+			} else {
+				const parte1 = textoAtual.slice(0, 4);
+				const parte2 = textoAtual.slice(4, 8);
+
+				foneAjustado = parte1 + '-' + parte2
+			}
+
+			telefone.value = foneAjustado;
+		}
+	</script>
 
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

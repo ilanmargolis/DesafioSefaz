@@ -10,6 +10,7 @@
 * Processo de build utilizando Maven
 * Servidor de aplicação Wildfly
 * Persistência utilizando JPA e Hibernate
+* Controle transagional EJB
 * Desenvolvido em JavaSE-12
 * Front-end em HTML5, CSS3, JSP e Bootstrap
 
@@ -22,3 +23,6 @@
 
 ## Comando de compilação
 * mvn clean install - maven clean e install
+
+## Modelagem do banco
+![Modelo](https://drive.google.com/file/d/1uhBq8tlqeUCu3l6iox6cfopn_iu-h2oK/view?usp=sharing)

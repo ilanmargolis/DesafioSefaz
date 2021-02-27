@@ -58,7 +58,8 @@
 							value="<c:out value='${usuario.nome}' />"
 							placeholder="Digite o nome do usuário" name="nome"
 							aria-label="Usuário" aria-describedby="nomeUsuario"
-							<c:if test="${usuario == null}">autofocus</c:if>>
+							onfocus="var temp_value=this.value; this.value=''; this.value=temp_value"
+							autofocus required>
 					</div>
 				</div>
 
@@ -72,7 +73,7 @@
 							value="<c:out value='${usuario.email}' />"
 							placeholder="Digite o e-mail do usuário" name="email"
 							id="emailUsuario" aria-label="Usuário"
-							aria-describedby="emailUsuario">
+							aria-describedby="emailUsuario" required>
 					</div>
 
 					<c:if test="${usuario == null}">
@@ -85,7 +86,7 @@
 								value="<c:out value='${usuario.senha}' />"
 								placeholder="Digite a senha do usuário" name="senha"
 								id="senhaUsuario" aria-label="Senha"
-								aria-describedby="senhaUsuario" maxlength="15">
+								aria-describedby="senhaUsuario" maxlength="15" required>
 						</div>
 					</c:if>
 				</div>

@@ -24,12 +24,13 @@
 					<div class="form-group">
 						<label for="fromEmail">Endereço de email</label> <input
 							type="email" class="form-control" id="fromEmail" name="email"
-							placeholder="email@exemplo.com" autofocus>
+							placeholder=" email @exemplo.com"
+							required autofocus>
 					</div>
 					<div class="form-group">
 						<label for="formPassword">Senha</label> <input type="password"
 							class="form-control" id="formPassword" name="senha"
-							placeholder="Senha">
+							placeholder="Senha" required>
 					</div>
 
 					<div class="form-check">
@@ -47,7 +48,7 @@
 				</form>
 			</div>
 		</div>
-		
+
 		<div class="rodape">
 			<p>&copy2021 Agenda de contatos - Desenvolvido por Ilan Margolis</p>
 		</div>

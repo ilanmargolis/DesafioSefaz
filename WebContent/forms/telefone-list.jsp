@@ -24,7 +24,7 @@
 					src="${pageContext.request.contextPath}/imagens/listar-usuarios.png">Listagem
 					de usuários</a>
 			</h2>
-			<div class="contaCliente">Telefones de ${usuario.nome}</div>
+			<div class="textoDestaque">Telefones de ${usuario.nome}</div>
 		</div>
 
 		
