@@ -7,6 +7,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet"
 	href="<c:url value="/css/desafiosefaz.css" />" />
+
 <title>Desafio SEFAZ</title>
 </head>
 <body>
@@ -14,7 +15,8 @@
 		<div class="cabecalho" align="center">
 			<div class="logomarca"></div>
 			<h2 class="menu">
-				<a href="${pageContext.request.contextPath}/usuario?acao=listagem"><img
+				<a
+					href="${pageContext.request.contextPath}/telefone?acao=listagem&usuario_id=<c:out value='${usuario.id}' />"><img
 					class="icone_g"
 					src="${pageContext.request.contextPath}/imagens/listar-telefones.png">Listagem
 					de telefones</a> <a
@@ -79,10 +81,10 @@
 						</div>
 						<input type="text" class="form-control"
 							value="<c:out value='${telefone.numero}' />"
-							onfocus="limpaFone(this)" onblur="mascaraFone(this)"
+							onblur="mascaraFone(this)" onfocus="limpaFone(this)"
 							placeholder="9999-9999 ou 9.9999-9999" name="numero"
 							id="numeroTelefone" aria-label="Número"
-							aria-describedby="numeroTelefone" maxlength="11" required>
+							aria-describedby="numeroTelefone" minlenght="8" maxlength="11" required>
 					</div>
 
 					<div class="col-3 input-group mb-2">
@@ -116,29 +118,32 @@
 
 			telefone.value = foneAjustado;
 		}
-
+		
 		function mascaraFone(telefone) {
 			const foneAtual = telefone.value;
 			const isCelular = foneAtual.length === 9;
 
 			let foneAjustado;
-
+			
 			if (isCelular) {
-				const parte1 = textoAtual.slice(0, 1);
-				const parte2 = textoAtual.slice(1, 5);
-				const parte2 = textoAtual.slice(5, 9);
+				const parte1 = foneAtual.slice(0, 1);
+				const parte2 = foneAtual.slice(1, 5);
+				const parte3 = foneAtual.slice(5, 9);
+
 
 				foneAjustado = parte1 + '.' + parte2 + '-' + parte3
 			} else {
-				const parte1 = textoAtual.slice(0, 4);
-				const parte2 = textoAtual.slice(4, 8);
+				const parte1 = foneAtual.slice(0, 4);
+				const parte2 = foneAtual.slice(4, 8);
 
 				foneAjustado = parte1 + '-' + parte2
 			}
-
+			
 			telefone.value = foneAjustado;
 		}
 	</script>
+
+	<script type="text/javascript" src="/js/desafiosefaz.js"></script>
 
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
