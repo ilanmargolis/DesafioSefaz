@@ -56,12 +56,14 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.4.27.Final</version>
 		</dependency>
+		
 		<!-- Banco de dados MySQL -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.16</version>
 		</dependency>
+		
 		<!-- Anotações de persistência -->
 		<dependency>
 			<groupId>javax.persistence</groupId>
@@ -77,7 +79,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+		<!-- suporte à manipulação de objetos Java e XML -->
 		<dependency>
 			<groupId>javax.annotation</groupId>
 			<artifactId>javax.annotation-api</artifactId>
@@ -89,13 +91,13 @@
 			<version>2.3.1</version>
 		</dependency>
 
+		<!-- Testes unitários -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
