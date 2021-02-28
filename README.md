@@ -25,4 +25,4 @@
 * mvn clean install - maven clean e install
 
 ## Modelagem do banco
-![Modelo](https://drive.google.com/file/d/1uhBq8tlqeUCu3l6iox6cfopn_iu-h2oK/view?usp=sharing)
+![Modelo](https://github.com/ilanmargolis/DesafioSefaz/blob/master/Extras/Modelagem.png)

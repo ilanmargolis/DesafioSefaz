@@ -126,7 +126,7 @@ public class TelefoneServlet extends HttpServlet {
 		} else if (acao.equalsIgnoreCase("inserir")) {
 			try {
 				doPost_inserir(request, response);
-			} catch (NoSuchAlgorithmException | ServletException | IOException e) {
+			} catch (NoSuchAlgorithmException e) {
 				e.printStackTrace();
 			}
 		} else if (acao.equalsIgnoreCase("alterar")) {

@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
 		} else if (acao.equalsIgnoreCase("logar")) {
 			try {
 				doPost_logar(request, response);
-			} catch (NoSuchAlgorithmException | ServletException | IOException e) {
+			} catch (NoSuchAlgorithmException e) {
 				e.printStackTrace();
 			}
 		}
