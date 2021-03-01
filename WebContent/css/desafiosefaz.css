@@ -1,8 +1,15 @@
-@charset "ISO-8859-1";
+@charset "UTF-8";
 
 body {
 	background-color: rgb(251, 255, 176);
-	background-image: url("../imagens/bg_desafio.png")
+	background-image: url("../imagens/bg_desafio.png");
+}
+
+.erro404 {
+	background-color: white;
+	background-image: url("../imagens/bg_erro404.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 tr.thead-light {
@@ -44,7 +51,7 @@ tr.thead-light {
 	right: 0;
 	margin: auto;
 	margin-top: 20px;
-/* 	position: absolute; caixa de login suspensa
+	/* 	position: absolute; caixa de login suspensa
  */
 }
 

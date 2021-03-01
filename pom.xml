@@ -9,6 +9,14 @@
 	<name>DesafioSefaz</name>
 	<description>Aplicativo de desafio da seleção SEFAZ 2021</description>
 	
+	<developers>
+		<developer>
+			<name>Ilan Margolis</name>
+			<email>ilanmargolis@gmail.com</email>
+			<url>https://www.linkedin.com/in/ilan-margolis/</url>
+		</developer>
+	</developers>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

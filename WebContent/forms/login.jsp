@@ -7,7 +7,6 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet"
 	href="<c:url value="/css/desafiosefaz.css" />" />
-<meta charset="ISO-8859-1">
 <title>Desafio SEFAZ</title>
 </head>
 <body>
