@@ -7,7 +7,7 @@
 <title>Agenda de contato</title>
 </head>
 <body>
-	<!-- redireciono para o servlet carregar a lista de clientes -->
+	<!-- redireciono para o servlet solicitar o login do usuário -->
 	<jsp:forward page="/login" />
 </body>
 </html>
